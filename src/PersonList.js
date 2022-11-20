@@ -13,7 +13,7 @@ export default class PersonList extends Component {
     }
     //Component Lifecycle Callback
   componentDidMount(){
-        this.axios.get(`https://randomuser.me/api/?results=10`)
+        axios.get(`https://randomuser.me/api/?results=10`)
         .then(res => {
             console.log(res.data);
             const persons = res.data.results;
