@@ -5,13 +5,15 @@ import {useState } from "react";
 export default class PersonList extends Component {
   
      //Define state default values
-     state = {
-        persons: []
+  constructor(props){
+        super(props);
+        this.state = {
+            persons: []
+        }
     }
-
-     //Component Lifecycle Callback
-    componentDidMount(){
-        axios.get(`https://randomuser.me/api/?results=10`)
+    //Component Lifecycle Callback
+  componentDidMount(){
+        this.axios.get(`https://randomuser.me/api/?results=10`)
         .then(res => {
             console.log(res.data);
             const persons = res.data.results;
